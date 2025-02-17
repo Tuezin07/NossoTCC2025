@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caixa Rápido - MAY ATACADISTA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Tela Inicial -->
+    <div id="tela-inicial" class="tela">
+        <h1>NEXUS STORE</h1>
+        <img src="images/mascote.png" alt="Personagem" class="personagem">
+        <button id="iniciar">Iniciar</button>
+    </div>
+
+    <!-- Tela de Leitura de Produtos -->
+    <div id="tela-leitura" class="tela" style="display: none;">
+        <div class="box-leitura">
+            <img src="images/logo.jpg" alt="Logo" class="logo">
+            <img src="images/scanner_image.png" alt="Scanner" class="scanner">
+            <p>Passe o código do produto no leitor</p>
+
+            <!-- Campo de entrada para o código de barras -->
+            <input type="text" id="codigo-barras" placeholder="Passe o código de barras">
+
+            <!-- Lista de produtos lidos -->
+            <div id="produtos-lidos">
+                <!-- Produtos serão adicionados aqui dinamicamente -->
+            </div>
+
+            <!-- Total da compra -->
+            <div id="total">
+                <strong>Total:</strong> <span id="valor-total">0.00</span>
+            </div>
+
+            <!-- Botão para finalizar a compra -->
+            <button id="finalizar-compra">Finalize sua compra</button>
+        </div>
+    </div>
+
+    <!-- Tela de Pagamento -->
+    <div id="tela-pagamento" class="tela" style="display: none;">
+        <div class="box-pagamento">
+            <h2>Pagamento via PIX</h2>
+            <p>Escaneie o QR Code abaixo para realizar o pagamento:</p>
+            <div id="qr-code">
+                <!-- QR Code será gerado aqui -->
+            </div>
+            <button id="voltar">Voltar</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
