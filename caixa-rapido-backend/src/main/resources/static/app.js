@@ -83,12 +83,13 @@ function atualizarTotal(valor) {
 
 // Evento de clique no botão "Finalizar Compra"
 document.getElementById('finalizar-compra').addEventListener('click', function() {
-    fetch('/sales', {
+    fetch('http://localhost:8080/vendas', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-            valorTotal: totalCompra,
-            metodoPagamento: "PIX"
+            valorTotal: totalCompra,  // Corrigido: "valorTotal" ao invés de "valor"
+            metodoPagamento: "PIX",
+            descricao: "Compra no Caixa Rápido"
         })
     })
     .then(response => {
@@ -100,6 +101,13 @@ document.getElementById('finalizar-compra').addEventListener('click', function()
         return response.json();
     })
     .then(data => {
+        console.log("Resposta do servidor:", data);
+
+        // Verifica se a URL de pagamento foi recebida corretamente
+        if (!data.urlPagamento) {
+            throw new Error("Erro: URL de pagamento não recebida do servidor.");
+        }
+
         // Redireciona para a página de pagamento do Mercado Pago
         window.location.href = data.urlPagamento;
     })
@@ -108,6 +116,7 @@ document.getElementById('finalizar-compra').addEventListener('click', function()
         alert(error.message);
     });
 });
+
 
 // Evento de clique no botão "Voltar"
 document.getElementById('voltar').addEventListener('click', () => {

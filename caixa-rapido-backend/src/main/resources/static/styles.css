@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,32 +19,59 @@ body {
 
 /* Tela Inicial */
 #tela-inicial {
-    background-color: #007bff;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo */
+
+h1 {
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(5, 0, 0);
+    position: absolute;
+    right: 10%;
+    bottom: 40%;
+    text-align: center;
 }
 
 .personagem {
-    width: 150px;
-    height: 150px;
-    margin: 20px;
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: 700px;
+    height: auto;
 }
 
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border: none;
-    border-radius: 5px;
-    background-color: #28a745;
+#iniciar {
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+    background-color: #d00000;
     color: white;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-button:hover {
-    background-color: #218838;
+#iniciar:hover {
+    background-color: #880505;
+}
+
+#iniciar::after {
+    content: '➜'; /* Seta para a direita */
+    font-size: 60px;
 }
 
 /* Tela de Leitura de Produtos */
@@ -53,22 +80,27 @@ button:hover {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
 }
 
 .logo {
-    width: 100px;
+    width: 150px;
     height: auto;
     margin-bottom: 10px;
 }
 
 .scanner {
-    width: 50px;
+    width: 80px;
     height: auto;
     margin-bottom: 10px;
 }
 
 #produtos-lidos {
     margin: 20px 0;
+    font-size: 1.5rem;
 }
 
 #produtos-lidos div {
@@ -77,8 +109,23 @@ button:hover {
 }
 
 #total {
-    font-size: 1.2em;
+    font-size: 2em;
+    font-weight: bold;
     margin: 20px 0;
+}
+
+#finalizar-compra {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#finalizar-compra:hover {
+    background-color: darkred;
 }
 
 /* Tela de Pagamento */
