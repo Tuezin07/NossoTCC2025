@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: #f37e7e;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -86,6 +86,18 @@ h1 {
     text-align: center;
 }
 
+#finalizar-compra {
+    background-color: #d00000;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+}
+
 .logo {
     width: 150px;
     height: auto;
@@ -93,14 +105,13 @@ h1 {
 }
 
 .scanner {
-    width: 80px;
+    width: 0px;
     height: auto;
     margin-bottom: 10px;
 }
 
 #produtos-lidos {
     margin: 20px 0;
-    font-size: 1.5rem;
 }
 
 #produtos-lidos div {
@@ -109,23 +120,8 @@ h1 {
 }
 
 #total {
-    font-size: 2em;
-    font-weight: bold;
-    margin: 20px 0;
-}
-
-#finalizar-compra {
-    background-color: red;
-    color: white;
-    padding: 10px 20px;
     font-size: 1.2em;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#finalizar-compra:hover {
-    background-color: darkred;
+    margin: 20px 0;
 }
 
 /* Tela de Pagamento */
